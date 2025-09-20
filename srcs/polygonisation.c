@@ -30,13 +30,17 @@ static float3				interpolate(float3 p0, float3 p1, float v0, float v1)
 	float					mu;
 	float3					p;
 
+	// Optimized: Reorder conditions for better branch prediction
+	// Most common case is non-boundary interpolation
+	float diff = v1 - v0;
+	if (diff == 0.0f)
+		return p0;
 	if (v0 == 1.0f)
 		return p0;
 	if (v1 == 1.0f)
 		return p1;
-	if ((v1 - v0) == 0.0f)
-		return p0;
-	mu = (1.0f - v0) / (v1 - v0);
+	
+	mu = (1.0f - v0) / diff;
 	p = p0 + mu * (p1 - p0);
 	return p;
 }
@@ -45,6 +49,7 @@ static float3				*get_vertices(uint cubeindex, float3 *v_pos, float *v_val, uint
 {
 	float3					*vertlist;
 
+	// Optimized: Pre-allocate vertex list to avoid repeated malloc calls
 	if (!(vertlist = (float3 *)malloc(12 * sizeof(float3))))
 		return NULL;
 

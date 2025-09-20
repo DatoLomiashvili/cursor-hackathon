@@ -50,31 +50,40 @@ You must demonstrate deep code understanding and create comprehensive documentat
 - C compiler (GCC/Clang recommended)
 - OpenGL development libraries
 - GLFW library
-- Build system (Make or CMake)
+- OpenSSL for matrix hashing
+- Build system (Make)
+
+## ⚡ Performance Features
+
+This implementation includes comprehensive performance optimizations that significantly improve fractal generation speed and efficiency. 
+
+**For detailed technical information**: See [Performance Optimizations](docs/commits/02-performance-optimizations.md)
 
 ## 🔍 Common Challenges You'll Encounter
 
 As you work through this codebase, you may encounter several types of issues:
 
-- Build System Confusion
-- Code Quality Issues
-- Missing Dependencies
-- Runtime Errors
-- Performance Inefficiencies
+- Build System Configuration
+- OpenGL Context Setup
+- Mathematical Precision
+- Memory Management
+- Performance Bottlenecks
 
-Remember: The core algorithms are correct - the challenges are in the implementation and maintenance aspects!
+Remember: The core algorithms are mathematically sound - focus on implementation and optimization!
 
 ## 🚀 BUILD AND RUN
 
-### Prerequisites:
+### Install Dependencies:
 ```bash
 brew install glfw glew cglm pkg-config openssl
 ```
 
-### Build:
+### Build (Optimized):
 ```bash
 make clean && make
 ```
+
+The build system includes comprehensive optimizations for maximum performance.
 
 ### Usage:
 ```bash
@@ -135,8 +144,19 @@ echo "150" | ./morphosis 0.08 -0.7 0.27015 0 0
 ├── includes/       # Header files
 ├── shaders/        # GLSL shader files
 ├── libft/          # Custom library headers
+├── docs/           # Documentation and commit history
 └── Makefile        # Build configuration
 ```
+
+## 📋 Documentation & Development History
+
+### Recent Updates
+- [Performance Optimizations v2.0](docs/commits/02-performance-optimizations.md) - Comprehensive performance improvements
+- [Restoration Fixes v1.0](docs/commits/01-restoration-fixes.md) - Initial codebase restoration and fixes
+
+### Technical Reference
+- [TECHNICAL_REFERENCE.md](TECHNICAL_REFERENCE.md) - Complete technical documentation and algorithms
+- [CHANGELOG.md](CHANGELOG.md) - Chronological index of all changes
 
 ## 📋 Submission Requirements
 

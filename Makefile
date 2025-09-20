@@ -52,7 +52,7 @@ LIB_INC = libft.h get_next_line.h
 LIB_INC_DIR = ./libft/
 LIB_INCS = $(addprefix $(LIB_INC_DIR), $(LIB_INC))
 
-FLAGS = -O3 -Wall -I$(INC_DIR) -I$(LIB_INC_DIR) -I/opt/homebrew/include -DGL_SILENCE_DEPRECATION
+FLAGS = -O3 -march=native -mtune=native -ffast-math -funroll-loops -Wall -I$(INC_DIR) -I$(LIB_INC_DIR) -I/opt/homebrew/include -DGL_SILENCE_DEPRECATION
 GL_LIBS = -framework OpenGL -L/opt/homebrew/lib -lGLEW -lglfw
 OPENSSL_LIB = -L/opt/homebrew/lib -lssl -lcrypto
 
