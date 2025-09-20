@@ -29,7 +29,6 @@ void						write_mesh(t_data *data, int surface, obj *o)
 	int						polygon;
 	int 					verts[3];
 	float 					*vertex;
-	float					percent;
 
 	if (!(vertex = (float *)malloc(3 * sizeof(float))))
 		error(MALLOC_FAIL_ERR, data);

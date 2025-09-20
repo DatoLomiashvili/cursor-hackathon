@@ -1,4 +1,6 @@
-# Is this javascripts?😫
+# Morphosis - 4D Julia Set Fractal Renderer 🌌
+
+This is a 3D fractal rendering application that generates and displays 4D Julia sets using OpenGL.
 
 ## 🎯 Hackathon Task Overview
 
@@ -6,7 +8,6 @@ Welcome to the **Cursor Reverse Engineering Challenge**!
 
 This task simulates a real-world scenario where you're given a legacy codebase that has fallen into disrepair. Your mission is to understand the codebase and revive the algorithm, identify and fix issues, optimize performance, and potentially add new features.
 
-While the core algorithms are sound and functional, the code has accumulated various maintenance issues that prevent it from running properly. You will face various issues while diving into the codebase - it's up to you to discover potential bugs, missed optimization oportunities, usage scenarios, and if you can, implement aditional features!
 
 ## 🏆 Success Criteria (Tiered System)
 
@@ -62,6 +63,80 @@ As you work through this codebase, you may encounter several types of issues:
 - Performance Inefficiencies
 
 Remember: The core algorithms are correct - the challenges are in the implementation and maintenance aspects!
+
+## 🚀 BUILD AND RUN
+
+### Prerequisites:
+```bash
+brew install glfw glew cglm pkg-config openssl
+```
+
+### Build:
+```bash
+make clean && make
+```
+
+### Usage:
+```bash
+# Use default parameters
+./morphosis -d
+
+# Custom Julia set parameters
+./morphosis <step_size> <q.x> <q.y> <q.z> <q.w>
+# Example: ./morphosis 0.1 -0.7 0.27015 0 0
+
+# Read from matrix file
+./morphosis -m <matrix_file.mat>
+
+# Read from poem file
+./morphosis -p <poem_file>
+```
+
+### Controls:
+- **ESC**: Exit the application
+- **S**: Save and export the fractal as an OBJ file
+
+### Example Commands:
+```bash
+# Classic Julia set
+echo "100" | ./morphosis 0.05 -0.8 0.156 0 0
+
+# Spiral patterns
+echo "150" | ./morphosis 0.08 -0.7 0.27015 0 0
+
+# Default parameters
+./morphosis -d
+```
+
+## 🏗 TECHNICAL ARCHITECTURE
+
+### Core Components:
+1. **Julia Set Mathematics** (`sample_julia.c`, `lib_complex.c`)
+   - 4D quaternion-based Julia set calculation
+   - Configurable iteration limits and threshold values
+
+2. **Point Cloud Generation** (`point_cloud.c`, `build_fractal.c`)
+   - 3D grid sampling of 4D Julia set
+   - Marching cubes polygonization algorithm
+
+3. **OpenGL Rendering** (`gl_*.c` files)
+   - Real-time 3D visualization
+   - Shader-based rendering pipeline
+   - Interactive camera controls
+
+4. **File I/O** (`matrix_*.c`, `write_obj.c`)
+   - Matrix-based parameter input
+   - OBJ file export for 3D printing/modeling
+   - SHA256-based coordinate generation
+
+### File Structure:
+```
+├── srcs/           # Source code
+├── includes/       # Header files
+├── shaders/        # GLSL shader files
+├── libft/          # Custom library headers
+└── Makefile        # Build configuration
+```
 
 ## 📋 Submission Requirements
 

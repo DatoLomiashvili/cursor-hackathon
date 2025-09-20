@@ -139,9 +139,9 @@ static int					***parse_data(int fd, char *line)
 		{
 			bin = (char *)malloc(sizeof(char) * 6);
 			tmp = (char *)malloc(sizeof(char) * 12);
-			ft_bzero(tmp, 12);
-			ft_bzero(bin, 6);
-			tmp = ft_strncpy(tmp, &line[line_c], 12);
+			bzero(tmp, 12);
+			bzero(bin, 6);
+			tmp = strncpy(tmp, &line[line_c], 12);
 			i = 0;
 			j = 0;
 			while (tmp[i])

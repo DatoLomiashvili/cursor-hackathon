@@ -11,6 +11,7 @@ SRC = 	main.c \
 		sample_julia.c \
 		polygonisation.c \
 		write_obj.c \
+		get_next_line.c \
 		\
 		gl_draw.c \
         gl_utils.c \
@@ -51,14 +52,14 @@ LIB_INC = libft.h get_next_line.h
 LIB_INC_DIR = ./libft/
 LIB_INCS = $(addprefix $(LIB_INC_DIR), $(LIB_INC))
 
-FLAGS = -O3 -Wall -I$(INC_DIR) -I$(LIB_INC_DIR)
-GL_LIBS = -framework OpenGL -lGLEW -lglfw -I/usr/local/include
-OPENSSL_LIB = -lssl -lcrypto -L/usr/local/opt/openssl@1.1/lib -I/usr/local/opt/openssl@1.1/include
+FLAGS = -O3 -Wall -I$(INC_DIR) -I$(LIB_INC_DIR) -I/opt/homebrew/include -DGL_SILENCE_DEPRECATION
+GL_LIBS = -framework OpenGL -L/opt/homebrew/lib -lGLEW -lglfw
+OPENSSL_LIB = -L/opt/homebrew/lib -lssl -lcrypto
 
 all: $(NAME)
 
 $(NAME): $(OBJ_DIR) $(OBJS)
-		clang $(OBJS) ./libft/libft.a -o $(NAME) $(GL_LIBS) $(OPENSSL_LIB)
+		clang $(OBJS) -o $(NAME) $(GL_LIBS) $(OPENSSL_LIB)
 
 $(OBJ_DIR):
 		mkdir -p $@

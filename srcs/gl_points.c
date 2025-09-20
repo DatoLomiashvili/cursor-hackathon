@@ -10,7 +10,7 @@ void						gl_retrieve_tris(t_data *data)
 	if (!(data->gl->tris = (float *)malloc(data->gl->num_pts * sizeof(float))))
 		error(MALLOC_FAIL_ERR, data);
 
-	bzero(data->gl->tris, data->gl->num_pts);
+	bzero(data->gl->tris, data->gl->num_pts * sizeof(float));
 	while (j < data->gl->num_pts)
 	{
 		for (int c = 0; c < 3; c++)

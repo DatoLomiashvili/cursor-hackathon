@@ -1,4 +1,5 @@
 #include "morphosis.h"
+#include <openssl/sha.h>
 
 static void 					ft_itoa(int num, char *str)
 {
