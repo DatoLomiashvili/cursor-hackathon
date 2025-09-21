@@ -42,6 +42,14 @@ t_gl						*init_gl_struct(void)
 	gl->tris = NULL;
 	gl->num_pts = 0;
 	gl->matrix = initGlMatrices();
+	
+	// Initialize UX enhancement fields
+	gl->color_scheme = 0;      // Default to scheme 0
+	gl->wireframe_mode = 1;    // Start in wireframe mode
+	gl->rotation_paused = 0;   // Start with rotation enabled
+	gl->zoom_level = 1.0f;     // Default zoom level
+	gl->color_uniform = 0;     // Will be set after shader compilation
+	
 	return gl;
 }
 

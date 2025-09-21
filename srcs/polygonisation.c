@@ -30,7 +30,7 @@ static float3				interpolate(float3 p0, float3 p1, float v0, float v1)
 	float					mu;
 	float3					p;
 
-	// Optimized: Reorder conditions for better branch prediction
+
 	// Most common case is non-boundary interpolation
 	float diff = v1 - v0;
 	if (diff == 0.0f)

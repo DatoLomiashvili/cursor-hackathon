@@ -33,6 +33,13 @@ typedef struct 				s_gl
 	uint 					num_pts;
 	uint					num_tris;
 	t_matrix 				*matrix;
+	
+	// UI/UX enhancement fields
+	int						color_scheme;
+	int						wireframe_mode;
+	int						rotation_paused;
+	float					zoom_level;
+	GLuint					color_uniform;
 }							t_gl;
 
 typedef struct 				s_julia

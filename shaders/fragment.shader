@@ -1,8 +1,9 @@
 #version 330 core
 
+uniform vec3            fractal_color;
 out vec4                color;
 
 void                    main()
 {
-    color = vec4(0.878f, 0.761f, 0.176f, 1.0f);
+    color = vec4(fractal_color, 1.0f);
 }

@@ -29,6 +29,11 @@ You must demonstrate deep code understanding and create comprehensive documentat
 
 ### Tier 3: Add Features ✨
 **Objective**: Extend functionality with new capabilities
+- ✅ **Interactive Color Schemes**: Six beautiful color themes accessible via number keys
+- ✅ **Rendering Mode Toggle**: Switch between wireframe and solid rendering
+- ✅ **Rotation Control**: Pause/unpause automatic rotation for detailed examination  
+- ✅ **Zoom Controls**: Smooth zoom in/out with +/- keys
+- ✅ **Reset Functionality**: Instant reset to default view settings
 - Dynamic rendering? Variations and new types? Deep zooms? Scan-line algo and raytracing?
 - Add user interface improvements or configuration options
 - Enhance the mathematical algorithms
@@ -104,6 +109,13 @@ The build system includes comprehensive optimizations for maximum performance.
 ### Controls:
 - **ESC**: Exit the application
 - **S**: Save and export the fractal as an OBJ file
+
+### Interactive Controls:
+- **1-6**: Change color schemes (Golden, Cyan-Green, Purple-Magenta, Red, Blue, Yellow)
+- **W**: Toggle between wireframe and solid rendering
+- **SPACE**: Pause/unpause automatic rotation
+- **+ / -**: Zoom in/out (use = key for +)
+- **R**: Reset view (zoom, rotation, color, wireframe mode)
 
 ### Example Commands:
 ```bash

@@ -28,6 +28,9 @@ void 						framebuffer_size_callback(GLFWwindow *window, int width, int height);
 void 						processInput(GLFWwindow *window, t_gl *gl);
 void 						terminate_gl(t_gl *gl);
 
+void						get_color_scheme(int scheme, float *r, float *g, float *b);
+void						apply_color_scheme(t_gl *gl);
+
 void 						createVBO(t_gl *gl, GLsizeiptr size, GLfloat *points);
 void						createVAO(t_gl *gl);
 

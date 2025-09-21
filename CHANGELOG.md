@@ -4,6 +4,22 @@ This file provides a chronological index of major changes and developments in th
 
 ## Version History
 
+### v3.0 - UX/UI Enhancement Update
+**Date**: September 20, 2025  
+**Documentation**: [docs/commits/03-ux-enhancements.md](docs/commits/03-ux-enhancements.md)
+
+**Summary**: Major user experience improvements with interactive controls including color schemes, rendering modes, zoom, and rotation control. Transforms the fractal viewer into an interactive exploration tool.
+
+**Key Changes**:
+- Interactive color schemes (6 themes via number keys)
+- Wireframe/solid rendering toggle (W key)
+- Rotation pause/play control (SPACE key)
+- Zoom in/out controls (+/- keys)
+- Reset view functionality (R key)
+- Enhanced visual aesthetics
+
+---
+
 ### v2.0 - Performance Optimization Update
 **Date**: September 20, 2025  
 **Documentation**: [docs/commits/02-performance-optimizations.md](docs/commits/02-performance-optimizations.md)

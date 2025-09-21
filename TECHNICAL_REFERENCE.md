@@ -61,10 +61,18 @@ float3 **polygonise(float3 *v_pos, float *v_val, uint2 *pos, t_data *data)
 - Creates vertex buffer objects
 
 ### Rendering Loop (`gl_draw.c`)
-- Clears framebuffer
-- Applies transformations
-- Renders triangle mesh
-- Handles user input
+- Clears framebuffer with enhanced background color
+- Applies dynamic transformations (rotation, zoom)
+- Handles wireframe/solid mode switching
+- Renders triangle mesh with dynamic colors
+- Processes interactive user input
+
+### Interactive Controls (`gl_utils.c`)
+- **Color Schemes**: 6 predefined color themes (1-6 keys)
+- **Rendering Modes**: Wireframe/solid toggle (W key)
+- **Rotation Control**: Pause/unpause rotation (SPACE key)  
+- **Zoom Control**: Dynamic zoom in/out (+/- keys)
+- **Reset Function**: Return to default settings (R key)
 
 ### Shaders
 **Vertex Shader** (`shaders/vertex.shader`):
@@ -80,11 +88,13 @@ void main() {
 **Fragment Shader** (`shaders/fragment.shader`):
 ```glsl
 #version 330 core
+uniform vec3 fractal_color;
 out vec4 color;
 void main() {
-    color = vec4(0.878f, 0.761f, 0.176f, 1.0f);
+    color = vec4(fractal_color, 1.0f);
 }
 ```
+*Enhanced to support dynamic color schemes via uniform*
 
 ## File Formats
 

@@ -16,6 +16,10 @@ void 						gl_calc_transforms(t_gl *gl)
 	glm_perspective(glm_rad(45.0f), (SRC_WIDTH / SRC_HEIGHT), 1.0f, 10.0f, matrix->projection_mat);
 	projection = glGetUniformLocation(gl->shaderProgram, "proj");
 	glUniformMatrix4fv(projection, 1, GL_FALSE, (float *)matrix->projection_mat);
+	
+	// Set up color uniform
+	gl->color_uniform = glGetUniformLocation(gl->shaderProgram, "fractal_color");
+	apply_color_scheme(gl);
 }
 
 void						gl_scale_tris(t_gl *gl, float3 max, float3 min)
